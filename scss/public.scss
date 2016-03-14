@@ -4,20 +4,25 @@
  */
 
 @import "_oa";
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
-// @include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
-// [class^="icon-"], [class*=" icon-"] {
-//   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
-//   speak: none;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
+  @include font-smoothing(antialiased);
+}
 
-//   @include font-smoothing(antialiased);
-// }
+.icon-gift:before { content: "\e903";}
+.icon-share:before { content: "\e904";}
+.icon-facebook:before { content: "\e901";}
+.icon-github:before { content: "\e603";}
+.icon-user:before { content: "\e610";}
+.icon-more:before { content: "\f833";}
 
 * {
   &, &:after, &:before {
@@ -32,30 +37,185 @@ html {
   height: 100%;
 
   body {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-    height: 100%;
     font-size: medium;
     font-family: Monaco, "微軟正黑體", "Microsoft JhengHei";
-    background: $mainBackgroundColor $mainBackgroundImage;
+    margin: 0;
     color: rgba(50, 50, 50, 0.8);
+  }
+}
 
-    @include font-smoothing(antialiased);
+
+$h: 50px;
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: $h;
+  line-height: $h;
+  padding: 0 5px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(62, 130, 247, 1);
+  z-index: 5999;
+  @include clearfix();
+  @include box-shadow(0 0 5px rgba(39, 40, 34, .5));
+
+  > * {
+    display: inline-block;
+    height: 100%;
+    float: left;
+    width: calc(100% - #{$h});
+    cursor: pointer;
+    @include text-shadow(0 0 1px rgba(39, 40, 34, .5));
     
-    #container {
+    &:first-child {
+      font-size: 18px;
+      margin: 0;
+      padding-left: 5px;
+      @include overflow-docx3();
+    }
+    &:last-child {
       position: relative;
-      display: block;
-      margin: 0 auto;
-      max-width: $mainWidth;
+      width: $h;
 
-      padding: 0 10px;
-
-      @media screen and (min-width: #{$mainWidth}) {
-        padding: 0;
+      &:before {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: $h;
+        text-align: center;
+        font-size: 23px;
+        @include transform(rotate(90deg));
+        @include transition(all .3s);
       }
+      div {
+        position: absolute;
+        right: -30px;
+        top: -20px;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 1);
+        @include scale(0);
+        @include opacity(0);
+        @include transition(all .3s);
+        @include box-shadow(0 0 1px rgba(39, 40, 34, .5), 0 0 5px rgba(39, 40, 34, .3));
+        @include border-radius(2px);
+        overflow: hidden;
+        padding: 2px 10px;
+
+        a {
+          @include a;
+          width: 100%;
+          min-width: 100px;
+          font-size: 15px;
+          padding: 10px 5px;
+          text-align: left;
+          @include text-shadow(none);
+          &:before {
+            margin-right: 5px;
+          }
+          + a {
+            position: relative;
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: inline-block;
+              width: 100%;
+              height: 1px;
+              background-color: rgba(39, 40, 34, .1);
+            }
+          }
+        }
+      }
+      
+      &.s {
+        &:before {
+          @include transform(rotate(0));
+        }
+        div {
+          right: 5px;
+          top: 10px;
+          z-index: 2999;
+          @include scale(1);
+          @include opacity(1);
+        }
+        &:after {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(39, 40, 34, .5);
+          z-index: 1999;
+        }
+      }
+    }
+  }
+}
+body {
+  padding-top: $h;
+}
+
+article {
+  section {
+    display: inline-block;
+    width: 100%;
+    + section {
+      margin-top: 20px;
+    }
+    h2, p {
+      padding: 0 10px;
+    }
+    pre {
+      line-height: 14px;
+      font-size: 13px;
+      border: 1px solid rgba(137, 137, 137, .2);
+      margin: 0 10px;
+      padding: 5px;
+      @include border-radius(2px);
+      word-break: break-all;
+       white-space: pre-wrap;       /* css-3 */
+       white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+       white-space: -pre-wrap;      /* Opera 4-6 */
+       white-space: -o-pre-wrap;    /* Opera 7 */
+       word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    ul {
+      padding-right: 10px;
+
+      li {
+        line-height: 1.7em;
+        a {
+          @include a;
+        }
+        span {
+          background-color: rgba(168, 71, 60, .1);
+          @include border-radius(2px);
+          padding: 0 2px;
+
+        }
+        + li {
+          margin-top: 5px;
+        }
+      }
+    }
+    > div {
+      padding: 0;
+    }
+  }
+}
+.scroll {
+
+  a {
+    overflow: hidden;
+    @include border-radius(2px);
+    
+    img {
+      width: 100%;
     }
   }
 }
