@@ -57,13 +57,13 @@
       float: left;
       height: 200px;
       margin: 10px;
-      width: calc(100% / 1 - 20px - 80px);
+      width: calc(100% / 1 - 20px - 100px);
     }
     @for $i from 1 through 100 {
       &.n#{$i} {
         width: calc(100% * #{$i});
         > * {
-          width: calc(100% / #{$i} - 20px - 80px);
+          width: calc(100% / #{$i} - 20px - 100px);
         }
       }
     }
