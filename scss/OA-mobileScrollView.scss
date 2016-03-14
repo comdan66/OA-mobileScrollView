@@ -49,7 +49,7 @@
     @include clearfix();
 
     &.t {
-      @include transition(left .5s cubic-bezier(0.000, 1.205, 0.540, 0.975));
+      @include transition(left .5s cubic-bezier(0.065, 0.820, 0.155, 1));
     }
 
     > * {
