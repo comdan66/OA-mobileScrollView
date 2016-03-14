@@ -49,6 +49,19 @@
 ```
 
 <br />
+## Options
+
+```
+  $(function () {
+    $('.scroll').OAmobileScrollView ({
+      'trigger_length': 50
+    });
+  });
+```
+
+* trigger_length：觸發長度，當按著移動多少，即可觸發換頁。
+
+<br />
 ## 特別注意
 * 手機上實測好像還會頓頓的.. 還在調整中..
 * 全網站所有元素都用 **box-sizing: border-box;** 實作，要稍微注意。

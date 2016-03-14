@@ -209,11 +209,14 @@ article {
   }
 }
 .scroll {
-
+  @media screen and (min-width: 600px) {
+    height: 420px !important;
+  }
   a {
     overflow: hidden;
     @include border-radius(2px);
-    
+    height: 400px;
+
     img {
       width: 100%;
     }

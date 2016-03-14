@@ -11,6 +11,7 @@
   $.fn.extend ({
     OAmobileScrollView: function (opt) {
       var d4Opt = {
+        trigger_length: 50,
       },
       init = function (opt) {
         var i = 1,
@@ -30,7 +31,7 @@
           stop: function () {
             $(this).addClass ('t');
 
-            if (Math.abs (($(this).offset().left + uw * i + temp) % w) > w / 3) i += parseFloat (($(this).offset().left + uw * i + temp)) < 0 ? 1 : -1;
+            if (Math.abs (($(this).offset().left + uw * i + temp) % w) > opt.trigger_length) i += parseFloat (($(this).offset().left + uw * i + temp)) < 0 ? 1 : -1;
             if (i + 1 > $unit.length) i = $unit.length - 1;
 
             l = -(uw * i + temp);
