@@ -45,7 +45,6 @@
     left: 0;
 
     display: inline-block;
-    width: calc(100% * 4);
     @include clearfix();
 
     &.t {
@@ -55,9 +54,17 @@
     > * {
       display: inline-block;
       float: left;
-      width: calc(100% / 4 - 20px - 80px);
       height: 200px;
       margin: 10px;
+    }
+    @for $i from 1 through 100 {
+      &.n#{$i} {
+        width: calc(100% * #{$i});
+        > * {
+          width: calc(100% / #{$i} - 20px - 80px);
+          border: 1px solid rgba(255, 0, 0, .3);
+        }
+      }
     }
   }
 }

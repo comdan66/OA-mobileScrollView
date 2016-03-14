@@ -21,7 +21,7 @@
             uw = $unit.width () + parseFloat ($unit.css ('border-left-width')) + parseFloat ($unit.css ('border-right-width')) + parseFloat ($unit.css ('margin-right')) + parseFloat ($unit.css ('margin-right')),
             temp = (uw - w) / 2;
 
-        $div.css ({'left': -(uw * i + temp)}).draggable ({
+        $div.addClass ('n' + $unit.length).css ({'left': -(uw * i + temp)}).draggable ({
           axis: 'x',
           start: function () {
             $(this).removeClass ('t');
