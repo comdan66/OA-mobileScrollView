@@ -5,7 +5,7 @@
 
 <br/>
 ## 範例演示
-模擬手機水平 scroll view 的效果。
+模擬手機水平 scroll view 的效果，[LIVE DEMO](http://comdan66.github.io/OA-mobileScrollView/)！
 
 ![OA's mobile scroll view](img/demo/demo.png)
 
