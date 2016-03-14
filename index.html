@@ -30,13 +30,100 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
+    <link href="css/OA-mobileScrollView.css" rel="stylesheet" type="text/css" />
     <link href="css/public.css" rel="stylesheet" type="text/css" />
 
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/jquery-ui_v1.11.4/jquery-ui.min.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/jquery.ui.touch-punch_v0.2.3/jquery.ui.touch-punch.min.js" language="javascript" type="text/javascript" ></script>
+
+    <script src="js/OA-mobileScrollView.js" language="javascript" type="text/javascript" ></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
 
   </head>
   <body lang="zh-tw">
+    
+    <header>
+      <h1>OA's mobile scroll view</h1>
+      <label class='icon-more'>
+        <div>
+          <a class='icon-gift' href='comdan66.github.io' target='_blank'>更多作品</a>
+          <a class='icon-github' href='' target='_blank'>GitHub</a>
+          <a class='icon-share' id='fb'>臉書分享</a>
+          <a class='icon-user' href='https://www.facebook.com/comdan66' target='_blank'>作者臉書</a>
+        </div>
+      </label>
+    </header>
+
+    <article>
+      <section>
+        <h2>範例演示</h2>
+        <p>模擬手機水平 scroll view 的效果。</p>
+        <div class='scroll'>
+          <div>
+            <a><img src='img/1.jpg'></a>
+            <a><img src='img/2.jpg'></a>
+            <a><img src='img/3.jpg'></a>
+            <a><img src='img/4.jpg'></a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>使用說明</h2>
+        <ul>
+          <li>利用 jquery、jquery-ui、jquery.ui.touch-punch 作出模擬手機 scroll view 的效果。</li>
+          <li>匯入<span>OA-mobileScrollView.css</span>、<span>public.css</span> 這兩隻 CSS 資源。</li>
+          <li>匯入<span>jquery.js</span>、<span>jquery-ui.js</span>、<span>jquery.ui.touch-punch.js</span>、<span>OA-mobileScrollView.js</span>、<span>public.js</span> 這五隻 JavaScript 資源。</li>
+          <li>其中 <span>public.css</span> 是此版頁面的版型調整，<span>public.js</span> 則是此版頁面的 JavaScript 的檔案。</li>
+          <li>主要依賴 <span>jquery.js</span> 與 <span>jquery-ui.js</span> 實作 scroll view feature，利用 jquery-ui 的 <span>draggable</span> 設定 <span>axis: 'x'</span> 完成水平拖曳移動。</li>
+          <li>在手機的滑動上 jquery-ui 的 draggable 會失效，所以需要 <span>jquery.ui.touch-punch.js</span> 修正。</li>
+          <li>而 <span>OA-mobileScrollView.css</span> 與 <span>OA-mobileScrollView.js</span> 為 OA 調整的 scroll view extend feature。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Html</h2>
+        <pre>
+  &lt;div class=&#39;scroll&#39;&gt;
+    &lt;div&gt;
+      &lt;a&gt;&lt;img src=&#39;img/1.jpg&#39;&gt;&lt;/a&gt;
+      &lt;a&gt;&lt;img src=&#39;img/2.jpg&#39;&gt;&lt;/a&gt;
+      &lt;a&gt;&lt;img src=&#39;img/3.jpg&#39;&gt;&lt;/a&gt;
+      &lt;a&gt;&lt;img src=&#39;img/4.jpg&#39;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</pre>
+      </section>
+
+      <section>
+        <h2>JavaScript</h2>
+        <pre>
+  $(function () {
+    $('.scroll').OAmobileScrollView ();
+  });
+</pre>
+      </section>
+
+      <section>
+        <h2>特別注意</h2>
+        <ul>
+          <li>手機上實測好像還會頓頓的.. 還在調整中..</li>
+          <li>全網站所有元素都用 <span>box-sizing: border-box;</span> 實作，要稍微注意。</li>
+          <li>版型 css 部分，是使用 <span>scss</span> 撰寫，故此專案會有 scss、css 的資料夾。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>相關參考</h2>
+        <ul>
+          <li><a href="https://jquery.com/" target='_blank'>jQuery</a>。</li>
+          <li><a href="http://jqueryui.com/" target='_blank'>jQuery UIs</a>。</li>
+          <li><a href="http://touchpunch.furf.com/" target='_blank'>jQuery UI Touch Punchs</a>。</li>
+          <li><a href="https://github.com/comdan66/oaf2e" target='_blank'>OA's F2E Framework</a>。</li>
+        </ul>
+      </section>
+    </article>
 
   </body>
 </html>
