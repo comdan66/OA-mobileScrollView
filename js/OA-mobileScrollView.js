@@ -19,9 +19,10 @@
             $unit = $div.find ('> *'),
             w = $scroll.width (),
             uw = $unit.width () + parseFloat ($unit.css ('border-left-width')) + parseFloat ($unit.css ('border-right-width')) + parseFloat ($unit.css ('margin-right')) + parseFloat ($unit.css ('margin-right')),
-            temp = (uw - w) / 2;
+            temp = (uw - w) / 2,
+            l = -(uw * i + temp);
 
-        $div.addClass ('n' + $unit.length).css ({'left': -(uw * i + temp)}).draggable ({
+        $div.addClass ('n' + $unit.length).css ({'left': l}).draggable ({
           axis: 'x',
           start: function () {
             $(this).removeClass ('t');
@@ -32,8 +33,9 @@
             if (Math.abs (($(this).offset().left + uw * i + temp) % w) > w / 3) i += parseFloat (($(this).offset().left + uw * i + temp)) < 0 ? 1 : -1;
             if (i + 1 > $unit.length) i = $unit.length - 1;
 
-            var l = -(uw * i + temp);
-            $(this).css ({'left': (i + 1 == $unit.length ? l - (temp) : (l > 0 ? 0 : l)) + 'px' });
+            l = -(uw * i + temp);
+
+            $(this).css ({'left': (i + 1 == $unit.length ? l - temp : (l > 0 ? 0 : l)) + 'px' });
           }
         });
         $scroll.addClass ('s');

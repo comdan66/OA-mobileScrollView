@@ -43,8 +43,9 @@
     position: absolute;
     top: 0;
     left: 0;
-
+    width: calc(100% * 1);
     display: inline-block;
+    cursor: move;
     @include clearfix();
 
     &.t {
@@ -56,6 +57,7 @@
       float: left;
       height: 200px;
       margin: 10px;
+      width: calc(100% / 1 - 20px - 80px);
     }
     @for $i from 1 through 100 {
       &.n#{$i} {
