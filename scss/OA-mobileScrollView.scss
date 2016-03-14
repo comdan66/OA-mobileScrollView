@@ -62,7 +62,6 @@
         width: calc(100% * #{$i});
         > * {
           width: calc(100% / #{$i} - 20px - 80px);
-          border: 1px solid rgba(255, 0, 0, .3);
         }
       }
     }
