@@ -27,15 +27,16 @@
 ## Html
 
 ```
-  &lt;div class=&#39;scroll&#39;&gt;
-    &lt;div&gt;
-      &lt;a&gt;&lt;img src=&#39;img/demo/1.jpg&#39;&gt;&lt;/a&gt;
-      &lt;a&gt;&lt;img src=&#39;img/demo/2.jpg&#39;&gt;&lt;/a&gt;
-      &lt;a&gt;&lt;img src=&#39;img/demo/3.jpg&#39;&gt;&lt;/a&gt;
-      &lt;a&gt;&lt;img src=&#39;img/demo/4.jpg&#39;&gt;&lt;/a&gt;
-      &lt;a&gt;&lt;img src=&#39;img/demo/5.jpg&#39;&gt;&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+  //div 故意打 di v 是因為避免 markdown 文件認為是 HTML 格式
+  <di v class='scroll'>
+    <div>
+      <a><img src='img/demo/1.jpg'></a>
+      <a><img src='img/demo/2.jpg'></a>
+      <a><img src='img/demo/3.jpg'></a>
+      <a><img src='img/demo/4.jpg'></a>
+      <a><img src='img/demo/5.jpg'></a>
+    </div>
+  </div>
 ```
 
 <br />
