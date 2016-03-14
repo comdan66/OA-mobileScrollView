@@ -12,7 +12,7 @@
     OAmobileScrollView: function (opt) {
       var d4Opt = {
         trigger_length: 50,
-        show_arrow: true
+        show_arrow: false
       },
       init = function (opt) {
         var i = 1,
