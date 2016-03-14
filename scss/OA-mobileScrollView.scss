@@ -47,10 +47,9 @@
     display: inline-block;
     cursor: move;
     @include clearfix();
-    -webkit-overflow-scrolling: touch;
 
     &.t {
-      @include transition(left .5s cubic-bezier(0.065, 0.820, 0.155, 1));
+      @include transition(left .6s);
     }
 
     > * {
