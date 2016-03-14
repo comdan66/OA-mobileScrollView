@@ -12,10 +12,13 @@
     OAmobileScrollView: function (opt) {
       var d4Opt = {
         trigger_length: 50,
+        show_arrow: true
       },
       init = function (opt) {
         var i = 1,
-            $scroll = $(this),
+            $scroll = $(this).addClass (opt.show_arrow ? 'a' : null),
+            $la = $('<a />').prependTo ($scroll).append ('❮'),
+            $ra = $('<a />').appendTo ($scroll).append ('❯'),
             $div = $scroll.find ('> div'),
             $unit = $div.find ('> *'),
             w = $scroll.width (),
@@ -39,6 +42,19 @@
             $(this).css ({'left': (i + 1 == $unit.length ? l - temp : (l > 0 ? 0 : l)) + 'px' });
           }
         });
+        $ra.click (function () {
+          $div.addClass ('t');
+          if (++i > $unit.length) i = $unit.length - 1;
+          l = -(uw * i + temp);
+          $div.css ({'left': (i + 1 == $unit.length ? l - temp : (l > 0 ? 0 : l)) + 'px' });
+        });
+        $la.click (function () {
+          $div.addClass ('t');
+          if (--i - 1 < 0) i = 0;
+          l = -(uw * i + temp);
+          $div.css ({'left': (i + 1 == $unit.length ? l - temp : (l > 0 ? 0 : l)) + 'px' });
+        });
+
         $scroll.addClass ('s');
         setTimeout (function () {
           $scroll.addClass ('z');

@@ -61,6 +61,20 @@
 
 * trigger_length：觸發長度，當按著移動多少，即可觸發換頁。
 
+
+<br />
+
+```
+  $(function () {
+    $('.scroll').OAmobileScrollView ({
+      show_arrow: true
+    });
+  });
+```
+
+* show_arrow：是否顯示左右箭頭。  
+	![OA's mobile scroll view](img/demo/arrow.png)
+
 <br />
 ## 特別注意
 * 手機上實測好像還會頓頓的.. 還在調整中..

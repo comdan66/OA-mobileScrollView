@@ -20,5 +20,5 @@ $(function () {
   });
   $('.scroll').OAmobileScrollView ({
     trigger_length: 30
-  });
+  }).find ('a').imgLiquid ({verticalAlign: 'center'});
 });

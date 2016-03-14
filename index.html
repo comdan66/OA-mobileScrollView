@@ -49,6 +49,7 @@
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
     <script src="js/jquery-ui_v1.11.4/jquery-ui.min.js" language="javascript" type="text/javascript" ></script>
     <script src="js/jquery.ui.touch-punch_v0.2.3/jquery.ui.touch-punch.min.js" language="javascript" type="text/javascript" ></script>
+    <script src="js/imgLiquid_v0.9.944/imgLiquid-min.js" language="javascript" type="text/javascript" ></script>
 
     <script src="js/OA-mobileScrollView.js" language="javascript" type="text/javascript" ></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
@@ -125,11 +126,20 @@
         <pre>
   $(function () {
     $('.scroll').OAmobileScrollView ({
-      'trigger_length': 50
+      trigger_length: 50
     });
   });
 </pre>
         <p>trigger_length：觸發長度，當按著移動多少，即可觸發換頁。</p>
+        <pre>
+  $(function () {
+    $('.scroll').OAmobileScrollView ({
+      show_arrow: true
+    });
+  });
+</pre>
+        <p>show_arrow：是否顯示左右箭頭。</p>
+        <img src='img/demo/arrow.png' />
       </section>
 
       <section>

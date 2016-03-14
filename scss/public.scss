@@ -169,6 +169,13 @@ article {
     }
     h2, p {
       padding: 0 10px;
+      + pre {
+        margin-top: 40px; 
+      }
+    }
+    img {
+      height: 200px;
+      margin-left: 10px;
     }
     pre {
       line-height: 14px;
@@ -178,11 +185,11 @@ article {
       padding: 5px;
       @include border-radius(2px);
       word-break: break-all;
-       white-space: pre-wrap;       /* css-3 */
-       white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-       white-space: -pre-wrap;      /* Opera 4-6 */
-       white-space: -o-pre-wrap;    /* Opera 7 */
-       word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
     }
     ul {
       padding-right: 10px;
@@ -211,11 +218,13 @@ article {
 .scroll {
   @media screen and (min-width: 600px) {
     height: 420px !important;
+    div a {
+      height: 400px !important;
+    }
   }
-  a {
+  div a {
     overflow: hidden;
     @include border-radius(2px);
-    height: 400px;
 
     img {
       width: 100%;
