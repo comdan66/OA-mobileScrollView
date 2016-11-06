@@ -5,7 +5,7 @@
 
 <br/>
 ## 範例演示
-模擬手機水平 scroll view 的效果，[LIVE DEMO](http://works.ioa.tw/OA-mobileScrollView/)！
+模擬手機水平 scroll view 的效果，[LIVE DEMO](https://works.ioa.tw/OA-mobileScrollView/index.html)！
 
 ![OA's mobile scroll view](img/demo/demo.png)
 
